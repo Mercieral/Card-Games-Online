@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "card-games-online-dev",
+    "prod": "card-games-online-30213"
+  }
+}
