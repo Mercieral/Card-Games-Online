@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import { GamesComponent } from './games/games.component';
+import { GamesComponent } from '../games/games.component';
 
 
 @NgModule({
