@@ -7,30 +7,29 @@ import * as firebase from 'firebase';
 import 'firebase/functions';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+    selector: 'app-games',
+    templateUrl: './games.component.html',
+    styleUrls: ['./games.component.css']
 })
+
 export class GamesComponent implements OnInit {
-  games: Game[];
+    games: Game[];
 
-  constructor(private db: AngularFireDatabase) {
-    db.list('games').snapshotChanges().subscribe((result) => {
-      this.games = result.map((game) => {
-        const data = game.payload.val();
-        return new Game(game.key, data.author, data.message);
-      });
-    });
-  }
+    constructor(private db: AngularFireDatabase) {
+        db.list('games').snapshotChanges().subscribe((result) => {
+            this.games = result.map((game) => {
+                const data = game.payload.val();
+                return new Game(game.key, data.author, data.message);
+            });
+        });
+    }
 
-  ngOnInit() {
+    ngOnInit() {}
 
-  }
-
-  newGame() {
-    const createGame = Object(firebase).functions().httpsCallable('createGame');
-    createGame({message: 'this is my new game!'}).then(function(result) {
-      console.log('game created!');
-    });
-  }
+    newGame() {
+        const createGame = Object(firebase).functions().httpsCallable('createGame');
+        createGame({message: 'this is my new game!'}).then(function(result) {
+            console.log('game created!');
+        });
+    }
 }

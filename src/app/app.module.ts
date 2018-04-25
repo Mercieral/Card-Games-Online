@@ -10,17 +10,18 @@ import { GamesComponent } from '../games/games.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GamesComponent
-  ],
-  imports: [
-	BrowserModule,
-	BrowserAnimationsModule,
-	AngularFireModule.initializeApp(environment.firebase),
-	AngularFireDatabaseModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        GamesComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }

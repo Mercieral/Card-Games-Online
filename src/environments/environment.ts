@@ -4,13 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-	production: false,
-	firebase: {
-		apiKey: "AIzaSyB2AhwQyAtbgJ93Jy5vRHzE3fbuoLzWJgs",
-		authDomain: "card-games-online-dev.firebaseapp.com",
-		databaseURL: "https://card-games-online-dev.firebaseio.com",
-		projectId: "card-games-online-dev",
-		storageBucket: "",
-		messagingSenderId: "943879480026"
-	  }
-  };
+    production: false,
+    firebase: {
+        apiKey: 'AIzaSyB2AhwQyAtbgJ93Jy5vRHzE3fbuoLzWJgs',
+        authDomain: 'card-games-online-dev.firebaseapp.com',
+        databaseURL: 'https://card-games-online-dev.firebaseio.com',
+        projectId: 'card-games-online-dev',
+        storageBucket: '',
+        messagingSenderId: '943879480026'
+    }
+};
