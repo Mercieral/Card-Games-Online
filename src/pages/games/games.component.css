@@ -1,0 +1,14 @@
+.header-image {
+    background-size: cover;
+    background-image: url('http://pluspng.com/img-png/cards-png-playing-cards-png-2998.png');
+}
+
+.game-card {
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.content-label {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}

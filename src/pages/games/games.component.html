@@ -1,0 +1,19 @@
+<p>
+  Working on creating new games and showing current games!
+</p>
+<button style="height: 100px; width: 100px" (click)="newGame()">
+	New Game
+</button>
+
+<mat-card class="game-card" *ngFor="let game of games">
+    <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{game.title}}</mat-card-title>
+        <mat-card-subtitle>{{game.type}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="content-label"> message: {{game.message}} </p>
+        <p class="content-label"> owner: {{game.owner}} </p>
+        <p class="content-label"> Created at: {{game.dateCreated | amLocal | amDateFormat:'llll'}}</p>
+    </mat-card-content>
+</mat-card>

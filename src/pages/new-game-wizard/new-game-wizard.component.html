@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Create a new game!</h2>
+
+<mat-dialog-content>
+
+    <mat-form-field class="new-game-inputs">
+        <input matInput type="text" [(ngModel)]="gameTitle" placeholder="Game Title">
+    </mat-form-field>
+
+    <mat-form-field class="new-game-inputs">
+        <input matInput type="text" [(ngModel)]="ownerName" placeholder="Your Name">
+    </mat-form-field>
+
+    <mat-form-field class="new-game-inputs">
+        <input matInput type="text" [(ngModel)]="gameMessage" placeholder="Game Message">
+    </mat-form-field>
+
+    <mat-form-field class="new-game-inputs">
+        <mat-select placeholder="Game Type" [(ngModel)]="selectedGameType" >
+            <mat-option *ngFor="let gameType of availableGameTypes" [value]="gameType.value">
+                {{ gameType.value }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="createAndClose()">Create</button>
+</mat-dialog-actions>
