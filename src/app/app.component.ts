@@ -14,4 +14,8 @@ export class AppComponent {
     constructor(private db: AngularFireDatabase) {
         this.title = db.object('title').valueChanges();
     }
+
+    signin() {
+        alert('LOL you thought this was implemented.\nAren\'t Popup alerts annoying?');
+    }
 }

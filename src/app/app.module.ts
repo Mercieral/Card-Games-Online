@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { MomentModule } from 'ngx-moment';
 
 // Angular Material modules
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatDialogModule,
@@ -14,7 +15,8 @@ import {
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule
 } from '@angular/material';
 
 // Components
@@ -27,13 +29,14 @@ import { NewGameWizardComponent } from '../pages/new-game-wizard/new-game-wizard
     declarations: [
         AppComponent,
         GamesComponent,
-        NewGameWizardComponent,
+        NewGameWizardComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
+        AppRoutingModule,
         MomentModule,
         FormsModule,
         MatDialogModule,
@@ -41,7 +44,8 @@ import { NewGameWizardComponent } from '../pages/new-game-wizard/new-game-wizard
         MatSelectModule,
         MatInputModule,
         MatButtonModule,
-        MatCardModule
+        MatCardModule,
+        MatToolbarModule
     ],
     entryComponents: [
         NewGameWizardComponent
