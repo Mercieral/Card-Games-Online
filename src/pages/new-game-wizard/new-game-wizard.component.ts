@@ -17,6 +17,7 @@ export class NewGameWizardComponent implements OnInit {
     selectedGameType: string;
     gameMessage: string;
     ownerName: string;
+    isCreating: boolean;
 
     // Eventually these will be a list of strings in the database so games can be toggled on/off easily
     availableGameTypes = [
@@ -32,19 +33,22 @@ export class NewGameWizardComponent implements OnInit {
     }
 
     createAndClose() {
-        const gameConfig = {
-            title: this.gameTitle || 'New game',
-            owner: this.ownerName || 'Anonymous',
-            message: this.gameMessage || '',
-            type: this.selectedGameType || this.availableGameTypes[0].value,
-            dateCreated: new Date().toISOString()
-        };
+        if (!this.isCreating) {
+            this.isCreating = true;
+            const gameConfig = {
+                title: this.gameTitle || 'New game',
+                owner: this.ownerName || 'Anonymous',
+                message: this.gameMessage || '',
+                type: this.selectedGameType || this.availableGameTypes[0].value,
+                dateCreated: new Date().toISOString()
+            };
 
-        // TODO: Do something that shows that it is saving...
-        const createGame = Object(firebase).functions().httpsCallable('createGame');
-        createGame(gameConfig).then((result) => {
-            this.dialogRef.close();
-        });
+            // TODO: Do something that shows that it is saving...
+            const createGame = Object(firebase).functions().httpsCallable('createGame');
+            createGame(gameConfig).then((result) => {
+                this.dialogRef.close();
+            });
+        }
     }
 
 }

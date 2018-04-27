@@ -9,8 +9,13 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: '',
+        redirectTo: "games",
+        pathMatch: "full"
+    },
+    {
         path: '**',
-        component: GamesComponent
+        redirectTo: "games",
     }
 
 ];
